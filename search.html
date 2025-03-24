@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>唐天成簡介 - 搜尋</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="education.html">學歷</a></li>
+                <li><a href="skills.html">技能</a></li>
+                <li><a href="experience.html">經歷</a></li>
+                <li class="dropdown">
+                    <a href="solutions.html">解決方案</a>
+                    <div class="dropdown-content">
+                        <a href="solutions.html">解決方案</a>
+                        <a href="solution1.html">Sol1</a>
+                        <a href="solution2.html">Sol2</a>
+                        <a href="solution3.html">Sol3</a>
+                        <a href="solution4.html">Sol4</a>
+                        <a href="solution5.html">Sol5</a>
+                        <a href="solution6.html">Sol6</a>
+                        <a href="solution7.html">Sol7</a>
+                        <a href="solution8.html">Sol8</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h1>全站搜尋</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="輸入關鍵字搜尋...">
+                <button id="searchButton"><i class="fas fa-search"></i></button>
+            </div>
+            <div id="searchResults" class="search-results">
+                <!-- 搜尋結果將在這裡顯示 -->
+            </div>
+        </section>
+    </main>
+
+    <div class="floating-contact">
+        <a href="mailto:thomastang@example.com" class="contact-icon" title="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/thomastang" target="_blank" class="contact-icon" title="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/thomastang" target="_blank" class="contact-icon" title="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 唐天成. All rights reserved.</p>
+    </footer>
+
+    <script src="search.js"></script>
+</body>
+
+</html>

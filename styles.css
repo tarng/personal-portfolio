@@ -1,0 +1,936 @@
+/* 基本樣式設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* 頁首樣式 */
+header {
+    background-color: #fff;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+nav a:hover {
+    color: #3498db;
+    background-color: #f8f9fa;
+}
+
+nav a.active {
+    color: #3498db;
+    background-color: #e3f2fd;
+    border-bottom: 2px solid #3498db;
+}
+
+/* 主要內容區域 */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+/* 個人資料區域 */
+.profile {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-text {
+    flex: 1;
+}
+
+/* 經歷時間軸 */
+.timeline {
+    position: relative;
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+    border-left: 2px solid #3498db;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #3498db;
+}
+
+.timeline-item h3 {
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.company {
+    color: #7f8c8d;
+    font-weight: 500;
+}
+
+.date {
+    color: #95a5a6;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.timeline-item ul {
+    list-style-position: inside;
+    margin-left: 1rem;
+}
+
+/* 聯絡方式 */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.contact-icon:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon i {
+    transition: all 0.3s ease;
+}
+
+.contact-icon:hover i {
+    transform: scale(1.1);
+}
+
+/* 為不同社交媒體設置不同的懸停顏色 */
+.contact-icon[title="Email"]:hover {
+    background-color: #EA4335;
+    color: white;
+}
+
+.contact-icon[title="LinkedIn"]:hover {
+    background-color: #0077B5;
+    color: white;
+}
+
+.contact-icon[title="GitHub"]:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* 頁尾 */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c3e50;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+/* 技能區塊樣式 */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.skill-category {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.skill-list {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-list li {
+    padding: 0.5rem 0;
+    color: #495057;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.skill-list li::before {
+    content: '•';
+    color: #3498db;
+    position: absolute;
+    left: 0;
+}
+
+/* 輪播橫幅樣式 */
+.banner-carousel {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.carousel-container {
+    width: 300%;
+    height: 100%;
+    display: flex;
+    animation: carousel 15s infinite;
+}
+
+.carousel-slide {
+    width: 33.333%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.carousel-slide:nth-child(1) {
+    background-image: linear-gradient(45deg, #1a237e, #0d47a1);
+}
+
+.carousel-slide:nth-child(2) {
+    background-image: linear-gradient(45deg, #2e7d32, #1b5e20);
+}
+
+.carousel-slide:nth-child(3) {
+    background-image: linear-gradient(45deg, #c2185b, #880e4f);
+}
+
+.tech-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(45deg, transparent 48%, rgba(255, 255, 255, 0.1) 50%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(255, 255, 255, 0.1) 50%, transparent 52%);
+    background-size: 60px 60px;
+    animation: techOverlay 20s linear infinite;
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.slide-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: white;
+    border: none;
+    padding: 0;
+}
+
+.slide-content p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+@keyframes carousel {
+
+    0%,
+    33% {
+        transform: translateX(0);
+    }
+
+    34%,
+    66% {
+        transform: translateX(-33.333%);
+    }
+
+    67%,
+    100% {
+        transform: translateX(-66.666%);
+    }
+}
+
+@keyframes techOverlay {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 60px 60px;
+    }
+}
+
+/* 浮動聯絡方式 */
+.floating-contact {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.floating-contact .contact-icon {
+    width: 45px;
+    height: 45px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.floating-contact .contact-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 為不同社交媒體設置不同的懸停顏色 */
+.floating-contact .contact-icon[title="Email"]:hover {
+    background-color: #EA4335;
+    color: white;
+}
+
+.floating-contact .contact-icon[title="LinkedIn"]:hover {
+    background-color: #0077B5;
+    color: white;
+}
+
+.floating-contact .contact-icon[title="GitHub"]:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .timeline-item {
+        padding-left: 1.5rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        gap: 1.5rem;
+    }
+
+    .contact-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .banner-carousel {
+        height: 300px;
+    }
+
+    .slide-content h2 {
+        font-size: 2rem;
+    }
+
+    .slide-content p {
+        font-size: 1.2rem;
+    }
+
+    .floating-contact {
+        right: 1rem;
+        bottom: 1rem;
+        padding: 0.4rem;
+        gap: 0.8rem;
+    }
+
+    .floating-contact .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+/* 下拉選單樣式 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 4px;
+    padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #2c3e50;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #f8f9fa;
+    color: #3498db;
+}
+
+.dropdown-content a.active {
+    background-color: #e3f2fd;
+    color: #3498db;
+}
+
+/* 解決方案輪播樣式 */
+.solutions-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.solutions-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.solutions-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.solution-card {
+    flex: 0 0 calc(33.333% - 2rem);
+    margin: 0 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.solution-card:hover {
+    transform: translateY(-5px);
+}
+
+.solution-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.solution-card h3 {
+    padding: 1rem;
+    margin: 0;
+    color: #2c3e50;
+}
+
+.solution-card p {
+    padding: 0 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.solution-card .read-more {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem 1rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.solution-card .read-more:hover {
+    background-color: #2980b9;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.carousel-button:hover {
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button.prev {
+    left: 1rem;
+}
+
+.carousel-button.next {
+    right: 1rem;
+}
+
+/* 解決方案詳情頁面樣式 */
+.solution-detail {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.solution-image {
+    flex: 0 0 50%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.solution-content {
+    flex: 1;
+}
+
+.solution-content h2 {
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.solution-description {
+    color: #666;
+    line-height: 1.6;
+}
+
+.solution-description p {
+    margin-bottom: 1rem;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .solution-card {
+        flex: 0 0 calc(100% - 2rem);
+    }
+
+    .solution-detail {
+        flex-direction: column;
+    }
+
+    .solution-image {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .carousel-button {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* 解決方案頁面樣式 */
+.solution-content {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.solution-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.solution-image {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+    transition: transform 0.5s ease;
+}
+
+.solution-content:hover .solution-image {
+    transform: scale(1.05);
+}
+
+.solution-details {
+    padding: 2rem;
+    flex: 1;
+    position: relative;
+}
+
+.solution-details h3 {
+    color: #2c3e50;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInRight 0.5s ease forwards 0.3s;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.solution-details h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: #3498db;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+.solution-content:hover .solution-details h3::after {
+    transform: scaleX(1);
+}
+
+.solution-details p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInRight 0.5s ease forwards 0.5s;
+}
+
+.solution-details ul {
+    list-style: none;
+    padding: 0;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideInRight 0.5s ease forwards 0.7s;
+}
+
+.solution-details li {
+    color: #555;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.solution-details li:hover {
+    transform: translateX(5px);
+}
+
+.solution-details li::before {
+    content: '•';
+    color: #3498db;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.solution-details li:hover::before {
+    transform: scale(1.5);
+}
+
+/* 響應式設計優化 */
+@media (max-width: 768px) {
+    .solution-content {
+        flex-direction: column;
+        margin: 1rem;
+        animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .solution-image {
+        width: 100%;
+        height: 250px;
+        border-radius: 12px 12px 0 0;
+        object-fit: cover;
+    }
+
+    .solution-details {
+        padding: 1.5rem;
+    }
+
+    .solution-details h3 {
+        font-size: 1.3rem;
+        margin: 1rem 0;
+    }
+
+    .solution-details p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .solution-details li {
+        font-size: 0.9rem;
+        margin-bottom: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .solution-content {
+        margin: 0.5rem;
+    }
+
+    .solution-image {
+        height: 200px;
+    }
+
+    .solution-details {
+        padding: 1rem;
+    }
+
+    .solution-details h3 {
+        font-size: 1.2rem;
+    }
+
+    .solution-details p {
+        font-size: 0.9rem;
+    }
+
+    .solution-details li {
+        font-size: 0.85rem;
+    }
+}
+
+/* 搜尋頁面樣式 */
+.search-section {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.search-container {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+#searchInput {
+    flex: 1;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: #3498db;
+}
+
+#searchButton {
+    padding: 0.8rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+    background-color: #2980b9;
+}
+
+.search-results {
+    margin-top: 2rem;
+}
+
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.result-item {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.result-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.result-item h3 {
+    margin: 0 0 0.5rem 0;
+    color: #2c3e50;
+}
+
+.result-item h3 a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.result-item h3 a:hover {
+    color: #2980b9;
+}
+
+.result-item p {
+    margin: 0;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+    }
+
+    #searchButton {
+        width: 100%;
+    }
+
+    .result-item {
+        padding: 1rem;
+    }
+}
